@@ -1,0 +1,135 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root,
+#root,
+#docs-root {
+  --first-color: #FF7448;
+  --second-color: #FF4848;
+  --third-color: #6248FF;
+  --deep-blue: #1D1D2C;
+  --white: #fff;
+  --gray: #B3B3B3;
+  --gray-2: #F2F2F2;
+}
+
+body {
+  background-image: linear-gradient(to right, #ff734875, #1d1d2c3a);
+}
+::-webkit-scrollbar {
+  width: .7rem;
+  
+}
+
+::-webkit-scrollbar-thumb {
+  padding: 2px;
+  background: var(--first-color);
+  border-radius: 10px;
+}
+
+.floating-ball {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(to bottom right, #FF7448, #d85c5c);
+  border-radius: 50%;
+  animation: floatAnimation 3s infinite ease-in-out;
+}
+
+.floating-ball2 {
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(to bottom right, cyan, rgb(45, 45, 223));
+  border-radius: 50%;
+  animation: floatAnimation 3s infinite ease-in-out;
+  /* z-index: ; */
+}
+@media (max-width: 640px) {
+ .floating-ball {
+  width: 150px;
+  height: 150px;
+ } 
+ .floating-ball2 {
+  width: 150px;
+  height: 150px;
+ } 
+}
+@keyframes floatAnimation {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.hover-effect {
+  transition: color 0.3s ease, transform 3s ease; /* Adjust the transition duration as needed */
+}
+
+.hover-effect:hover h1 {
+  color: var(--first-color);
+}
+
+.hover-effect:hover img {
+  transform: translateY(-5px);
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-menu-item1 {
+  animation: fadeInDown 0.5s ease-out 0.3s forwards;
+}
+
+.animate-menu-item2 {
+  animation: fadeInDown 0.5s ease-out 0.6s forwards;
+}
+
+.animate-menu-item3 {
+  animation: fadeInDown 0.5s ease-out 0.9s forwards;
+}
+
+.animate-menu-item4 {
+  animation: fadeInDown 0.5s ease-out 1.2s forwards;
+}
+.menu-content {
+  display: block;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.menu-link:hover .menu-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.hamburger-menu {
+  position: fixed;
+  top: -100vh; /* Initial state above the viewport */
+  right: 0;
+  width: 100%;
+  background-color: var(--first-color); /* Set the background color to orange */
+  transition: top 0.5s ease-in-out; /* Add a smooth transition for the top property */
+}
+
+.menu-open {
+  top: 0; /* Show the menu by bringing it down */
+}
+
+.text-deep-blue {
+  color: #001e6c; /* Deep blue color */
+}
+
+
+
