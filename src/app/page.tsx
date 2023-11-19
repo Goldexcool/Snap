@@ -1,21 +1,20 @@
-// "use client"
-// import React, { useEffect, useState } from 'react';
+"use client"
+import React, { useEffect, useState } from 'react';
 // import { useRouter } from 'next/navigation';
 // import Preloader from '@/Components/Preloader';
 import Hero from '../Components/Hero';
 import Services from '../Components/Services';
 import Channels from '@/Components/Channels';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Page = () => {
-  // const [loading, setLoading] = useState(true); // Set initial loading state to true
-
-  // Simulate a delay to showcase the preloader
-  // useEffect(() => {
-  //   const delay = setTimeout(() => {
-  //     setLoading(false); // Set loading state to false after 500ms
-  //   }, 500); 
-  //   return () => clearTimeout(delay);
-  // }, []);
+  useEffect(() => {
+    AOS.init({
+      duration: 2000, // Animation duration
+      offset: 200, // Offset (in pixels) from the top of the page
+    });
+  }, []);
 
   return (
     <>

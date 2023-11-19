@@ -1,13 +1,23 @@
+"use client"
 import React from 'react'
 import Image from 'next/image'
 import contact from '../Data/Channels'
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 
 const Channels = () => {
+    React.useEffect(() => {
+        AOS.init({
+            duration: 2000, // Animation duration
+            offset: 200, // Offset (in pixels) from the top of the page
+        });
+    }, []);
     return (
         <section className='flex justify-center items-center md:px-[5rem] lg:px-[7rem] flex-col mt-[5rem] mb-[5rem]' >
             <h1 className='text-[34px] text-deep-blue mb-3'>Supported Channels</h1>
             <h2 className='text-center text-[18px]  md:text-[25px] text-deep-blue mb-4 '>SnappyCX integrates with your business support platforms and channels.</h2>
-            <div className="flex flex-wrap items-center justify-center gap-8 lg:justify-between w-full">
+            <div className="flex flex-wrap items-center justify-center gap-8 lg:justify-between w-full" data-aos="zoom-in">
                 {contact.map((item: any, index: any) => (
                     <div key={index} className="flex items-center justify-center max-w-full">
                         <div className="flex items-center justify-between w-full gap-4 mt-[3rem]">

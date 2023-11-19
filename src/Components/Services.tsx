@@ -1,15 +1,24 @@
 "use client"
-import React from 'react'
+import React, {useEffect} from 'react'
 import dataservice from '../Data/Services'
 import Image from 'next/image'
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 const Services = () => {
+    useEffect(() => {
+        AOS.init({
+          duration: 2000, // Animation duration
+          offset: 200, // Offset (in pixels) from the top of the page
+        });
+      }, []);
     return (
-        <div className='mt-[8rem] px-7'>
+        <div className='mt-[8rem] px-7' >
             <div className="flex flex-col items-center mb-[4rem]">
                 <p className="text-center text-[2rem] md:text-[3rem] text-deep-blue font-[400]  "> Our Core Services</p>
                 <hr className="w-[40px] h-1 bg-first-color border-none rounded-full"/>
             </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 ">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 " data-aos="zoom-in">
                 {dataservice.map((serve: any, i: any) => (
                     <div
                         key={i}

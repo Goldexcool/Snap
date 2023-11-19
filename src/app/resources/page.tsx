@@ -1,4 +1,5 @@
-import React from 'react';
+"use client"
+import React, {useEffect} from 'react';
 import check from '../../Images/bx-check-circle.svg'
 import Image from 'next/image'
 import Resources from '../../Images/hero_2.3c8678ea.jpg'
@@ -6,8 +7,16 @@ import amazon from '../../Images/amazon.5f1aba87-removebg-preview.png'
 import shopify from '../../Images/shopify.da480c94-removebg-preview.png'
 import slack from '../../Images/livechat.c11bb8fb-removebg-preview.png'
 import zend from '../../Images/zendesk.069474f8-removebg-preview.png'
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Page = () => {
+    useEffect(() => {
+        AOS.init({
+            duration: 2000, // Animation duration
+            offset: 200, // Offset (in pixels) from the top of the page
+        });
+    }, []);
     return (
         <main className='flex justify-center items-center flex-col gap-5'>
             <section className='flex items-center justify-center max-w-full mt-[5rem] mb-[5rem] flex-col'>
@@ -16,7 +25,7 @@ const Page = () => {
                 <hr className="w-[60px] h-1 bg-first-color border-none rounded-full"/>
             </div>
                 <div className='flex lg:flex-row flex-col items-center justify-between w-[1100px] max-w-full'>
-                    <div className='flex flex-col gap-[3rem]'>
+                    <div className='flex flex-col gap-[3rem]' data-aos="fade-left">
                         <h1 className='text-[45px] lg:text-left text-center text-deep-blue'>24/7 Outsourcing</h1>
                         <div className='flex flex-col gap-3'>
                             <div className='flex gap-3 lg:justify-start justify-center text-deep-blue lg:text-right text-center text-[20px]'>
@@ -37,12 +46,12 @@ const Page = () => {
                         </div>
                         <p className='text-[25px] lg:text-left text-center text-deep-blue'>Free consultation. No contract.</p>
                     </div>
-                    <div className='flex lg:justify-items-start lg:w-[500px] w-5/6 justify-center '>
+                    <div className='flex lg:justify-items-start lg:w-[500px] w-5/6 justify-center ' data-aos="fade-right">
                         <Image src={Resources} alt='' width={600} height={800} className='lg:w-[500px] w-5/6 height-[600px]' />
                     </div>
                 </div>
             </section>
-            <div className='mt-[5rem] flex justify-between items-center flex-col max-w-full mb-[4rem]'>
+            <div className='mt-[5rem] flex justify-between items-center flex-col max-w-full mb-[4rem]' data-aos="zoom-in">
                     <h1 className='text-[20px] text-deep-blue'>SOME OF THE TOOLS WE SUPPORT</h1>
                     <div className='flex flex-wrap justify-center gap-4 lg:gap-12 w-full bg-transparent'>
                         <Image src={amazon} alt='' width={200} height={200} className='bg-transperent  w-1/4'/>

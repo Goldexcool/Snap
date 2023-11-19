@@ -25,6 +25,7 @@ export default function RootLayout({
         <Penultimate />
         <Footer />
       </body>
+     
     </html>
   )
 }

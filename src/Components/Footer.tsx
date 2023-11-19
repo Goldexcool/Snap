@@ -1,10 +1,20 @@
-import React from 'react';
+"use client"
+import React, {useEffect} from 'react';
 import Image from 'next/image'
 import Socials from '../Data/Socials'
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 
 const Footer = () => {
+    useEffect(() => {
+        AOS.init({
+            duration: 2000, // Animation duration
+            offset: 200, // Offset (in pixels) from the top of the page
+        });
+    }, []);
     return (
-        <footer className='flex items-center max-w-[85%] rounded-xl mb-6 justify-center mx-auto p-12 bg-black text-white mt-[5rem]'>
+        <footer className='flex items-center max-w-[85%] rounded-xl mb-6 justify-center mx-auto p-12 bg-black text-white mt-[5rem]' >
             <div className='flex flex-wrap items-center justify-between w-[1000px]'>
                 <div className='flex  flex-col gap-5'>
                     <h1 className=' text-[27px]'>SnappyCx</h1>
